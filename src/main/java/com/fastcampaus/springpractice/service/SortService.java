@@ -1,16 +1,20 @@
-package com.fastcampaus.javaoop.service;
+package com.fastcampaus.springpractice.service;
 
-import com.fastcampaus.javaoop.logic.JavaSort;
-import com.fastcampaus.javaoop.logic.Sort;
+import com.fastcampaus.springpractice.logic.Sort;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service // 서비스역할로 한다는 빈으로 등록
 public class SortService {
     // 생성자 주입방식 일반코드방식(의존성 주입)
     // 해당 필드는 SortService 생성자를 만들때 한번만 만들기때문에 final로 선업
     private final Sort<String> sort;
 
-    public SortService(Sort<String> sort) {
+    // @Qualifier 사용시 @Compnet("빈이름")을 매핑시켜 찾아준다.
+    // 단, @Compnet에 빈이름 따로 지정안한다면 기본적으로 클래스명에서 앞에 대문자를 소문자로 바꾼상태로 지정한다.
+    public SortService(@Qualifier("bubbleSort") Sort<String> sort) {
         this.sort = sort;
         System.out.println("[구현체]: " + sort.getClass().getName());
     }
