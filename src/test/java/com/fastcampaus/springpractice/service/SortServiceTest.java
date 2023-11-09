@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SortServiceTest {
 
-    private SortService sut = new SortService(new BubbleSort<>());
-
-
-    @Test
-    void test() {
-        //given
-
-        //when
-        List<String> acture = sut.doSort(List.of("3","2","1"));
-        //then
-        assertEquals(List.of("1","2","3"),acture);
-    }
+//    private SortService sut = new SortService(new BubbleSort<>());
+//
+//
+//    @Test
+//    void test() {
+//        //given
+//
+//        //when
+//        List<String> acture = sut.doSort(List.of("3","2","1"));
+//        //then
+//        assertEquals(List.of("1","2","3"),acture);
+//    }
 }

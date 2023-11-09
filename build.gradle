@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    //플러그인 war추가(war를 실행시키기위해서는 해당 플러그인이 필요함)
     id 'war'
 }
 
@@ -24,12 +25,21 @@ tasks.withType(JavaCompile) {
 dependencies {
     compileOnly('javax.enterprise:cdi-api:2.0.SP1')
     compileOnly('javax.ws.rs:javax.ws.rs-api:2.1.1')
+    // 웹어플리케이션을 톰캣을 이용해 웹에 올릴건데 그럴려면  servlet-api 가 필요함
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
 
-    implementation ('org.springframework:spring-context:5.3.8')
-    testImplementation("org.springframeowrk:spring-test:5.3.8")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+//    implementation ('org.springframework:spring-context:5.3.8')
+//    implementation ('org.springframework:spring-web:5.3.8')
+    //webmvc 는 web의모든 의존성을 포함하고있음 또한
+    //webmvc는 spring-context의 모든 의존성을 포함하고있음 그래서 spring-context필요없음
+//    implementation ("org.springframework:spring-webmvc:5.3.8")
+    // 이렇게 두개는 똑같은 의미이다.
+//    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+//    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'org.springframework:spring-webmvc:5.3.8'
+    testImplementation 'org.springframework:spring-test:5.3.8'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 test {
