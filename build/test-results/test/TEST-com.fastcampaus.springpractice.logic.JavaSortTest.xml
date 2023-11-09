@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fastcampaus.springpractice.logic.JavaSortTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-07T15:07:35" hostname="NAHAEJUN" time="0.001">
+  <properties/>
+  <testcase name="자바소트 - 리스트를 넣으면 정렬된 결과를 보여준다." classname="com.fastcampaus.springpractice.logic.JavaSortTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
